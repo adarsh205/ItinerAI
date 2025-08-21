@@ -18,10 +18,10 @@ class GraphBuilder():
         self.calculator_tools = CalculatorTool()
         self.currency_conversion_tools = CurrencyConversionTool()
         self.place_search_tools = PlaceSearchTool()
-        self.tools.extend([* self.weather_info_tools.tool_list,
-                           * self.calculator_tools.tool_list,
-                           * self.currency_conversion_tools.tool_list,
-                           * self.place_search_tools.tool_list])
+        self.tools.extend([* self.weather_tools.weather_tool_list, 
+                           * self.place_search_tools.place_search_tool_list,
+                           * self.calculator_tools.calculator_tool_list,
+                           * self.currency_converter_tools.currency_converter_tool_list])
         self.llm_with_tools = self.llm.bind(tools=self.tools)
 
         self.graph = None
